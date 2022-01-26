@@ -1,12 +1,13 @@
-import productsRouter from '@modules/products/routes/products.routes';
 import { Router } from 'express';
+import ufsRouter from '@modules/ufs/routes/ufs.routes';
+
 
 const routes = Router();
-
-routes.use('/products', productsRouter)
 
 routes.get('/', (request, response) => {
   return response.json({ message: 'Hello World! 🤑' });
 });
+
+routes.use('/uf', ufsRouter);
 
 export default routes;
